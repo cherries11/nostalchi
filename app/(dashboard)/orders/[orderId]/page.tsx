@@ -29,4 +29,4 @@ const OrderDetails = async ({ params }: { params: { orderId: string }}) => {
   )
 }
 
-export default OrderDetails
+export default OrderDetails;
