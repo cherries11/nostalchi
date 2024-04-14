@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+
 import { stripe } from "@/lib/stripe";
 
 const corsHeaders = {
@@ -26,12 +27,12 @@ export async function POST(req: NextRequest) {
         allowed_countries: ["US", "CA"],
       },
       shipping_options: [
-        { shipping_rate: "shr_1P5AZwCrN51ikKg10bacpsnc" },
-        { shipping_rate: "shr_1P5AbWCrN51ikKg1EDx5urkM" },
+        { shipping_rate: "shr_1P5Q3KCrN51ikKg1o9jgE6D6" },
+        { shipping_rate: "shr_1P5Q1jCrN51ikKg1FRW08Qjy" },
       ],
       line_items: cartItems.map((cartItem: any) => ({
         price_data: {
-          currency: "dzd",
+          currency: "cad",
           product_data: {
             name: cartItem.item.title,
             metadata: {
@@ -55,3 +56,5 @@ export async function POST(req: NextRequest) {
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }
+
+export const dynamic = "force-dynamic";

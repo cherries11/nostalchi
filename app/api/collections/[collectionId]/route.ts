@@ -62,4 +62,4 @@ export const DELETE = async(req: NextRequest, {params}: {params: {collectionId: 
     }
 }
 
-export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic";
